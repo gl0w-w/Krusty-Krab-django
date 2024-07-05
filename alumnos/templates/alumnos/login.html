@@ -1,0 +1,124 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Krusty Krab | Registro</title>
+
+    <!--Conexión con el iconos de la página-->
+    <link rel="icon" href="{% static 'img/sponge-icon.jpg' %}" />
+
+    <!-- Conexión de los bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <style>
+      .error {
+        color: red;
+      }
+
+      /* Media query para dispositivos móviles */
+      @media (max-width: 768px) {
+        h2 {
+          font-size: 24px;
+          /* Tamaño de fuente más pequeño para dispositivos móviles */
+          margin-top: 15px;
+          /* Espacio superior reducido */
+          margin-bottom: 15px;
+          /* Espacio inferior reducido */
+        }
+      }
+
+      /* Estilos para la imagen dentro del contenedor */
+      .container img {
+        max-width: 100%;
+        /* Establece el ancho máximo de la imagen al 100% del contenedor */
+        height: auto;
+        /* La altura se ajustará automáticamente para mantener la proporción */
+        display: block;
+        /* Elimina cualquier espacio adicional alrededor de la imagen */
+        width: 340px;
+        /* Ancho de la imagen */
+      }
+    </style>
+  </head>
+
+  <!-- Esta es la NavBar -->
+  {% include 'alumnos/navbar-nocarrito.html' %}
+
+  <body style="background-color: #24252a">
+    <div class="container d-flex justify-content-center mt-5">
+      <a href="{% url 'index' %}">
+        <img
+          src="{% static 'img/logologin2.png' %}"
+          class="d-none d-md-block logo-md"
+          alt="logo login"
+        />
+      </a>
+    </div>
+    <div class="container mt-5">
+      <div class="row justify-content-center mt-5 text-white">
+        <div class="col-md-6">
+          <h2 class="text-center">Portal de registro</h2>
+          <form
+            method="post"
+            id="registerForm"
+            class="p-5 rounded text-white"
+            style="margin: 30px"
+          >
+            {% csrf_token %} {{ form.as_p }}
+            <div class="button-group d-flex justify-content-between">
+              <button type="submit" class="btn btn-success">Registrar</button>
+              <button id="btnRetroceder" type="button" class="btn btn-danger">
+                Retroceder
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="successModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>Te has registrado con éxito.</p>
+      </div>
+    </div>
+
+    <script>
+      document
+        .getElementById("btnRetroceder")
+        .addEventListener("click", function () {
+          window.location.href = "{% url 'index' %}";
+        });
+    </script>
+
+    {% include 'alumnos/footer.html' %}
+
+    <!-- jQuery, Bootstrap JS y Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>

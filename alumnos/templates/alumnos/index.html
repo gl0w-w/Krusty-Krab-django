@@ -1,0 +1,258 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="mono" content="width=device-width, initial-scale=1.0" />
+
+    <!--JS Scripts para funciones-->
+    <script src="{% static 'JS/carrito.js' %}"></script>
+    <script src="{% static 'JS/toast.js' %}"></script>
+
+    <!--Conexión con el icono de la página-->
+    <link rel="icon" href="{% static 'img/sponge-icon.jpg'%}" />
+    <title>Krusty Krab | Inicio.</title>
+
+    <!--Conexiónes con los css-->
+    <link rel="stylesheet" href="{% static 'css/index.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/cards1.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}" />
+    <link
+      rel="stylesheet"
+      href="{% static 'css/owl.theme.default.min.css' %}"
+    />
+
+    <!--Enlaces para los bootstraps usados-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body style="background-color: #24252a">
+    <div
+      class="alert alert-info alert-dismissible fade show"
+      style="margin: 0%; text-align: center"
+      role="alert"
+    >
+      <strong>¡INICIA SESIÓN!</strong>
+      Para así tener una mejor experiencia en la página.
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="alert"
+        aria-label="Close"
+      ></button>
+    </div>
+
+    <!-- Esta es la NavBar -->
+    {% include 'alumnos/navbar.html' %}
+
+    <main>
+      <!-- Aqui estan las cards de los productos-->
+      <div
+        class="card-container row row-cols-1 row-cols-md-2 row-cols-lg-3 g-0 py-5 mt-5"
+      >
+        <div class="card" style="width: 24rem">
+          <img src="{% static 'img/krabby-patty.jpg'%}" alt="Krabby Patty" />
+          <div class="card-body">
+            <h3 class="card-title">Krabby Patty</h3>
+            <p>
+              Esta es la mejor hamburguesa del mundo. La gran Krabby Patty es
+              una de las mejores hamburguesas ya que cuenta con los mejores
+              ingredientes de fondo de bikini.
+            </p>
+            <strong><p>Precio: $6800</p></strong>
+            <button class="producto-Agregar" data-producto="Krabby Patty">
+              Agregar
+            </button>
+          </div>
+        </div>
+        <div
+          class="toast-container position-fixed bottom-0 end-0 p-3"
+          style="z-index: 14"
+        >
+          <div
+            id="toast"
+            class="toast hide"
+            role="alert"
+            aria-live="assertive"
+            aria-atomic="true"
+          >
+            <div class="toast-header">
+              <strong class="me-auto">Aviso</strong>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="toast"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="toast-body">Su producto se ha agregado al carrito.</div>
+          </div>
+        </div>
+        <div class="card" style="width: 24rem">
+          <img src="{% static 'img/chum-burger.webp'%}" alt="Krabby Patty" />
+          <div class="card-body">
+            <h3 class="card-title">Chum-burger</h3>
+            <p>
+              A ver... No creo que estes pensando en comprar esto, verdad? Esta
+              es una de las hamburguesas de nuestro "amigo" Plankton, y bueno,
+              la imagen habla por si sola.. no creo que deberias comerla.
+            </p>
+            <strong><p>Precio: $7890</p></strong>
+            <button class="producto-Agregar">Agregar</button>
+          </div>
+        </div>
+        <div class="card" style="width: 24rem">
+          <img src="{% static 'img/Plab-patty.webp'%}" alt="Krabby Patty" />
+          <div class="card-body">
+            <h3>Plab Patty</h3>
+            <p>
+              La Plab Patty es una de las creaciones hechas por Don Cangrejo y
+              Plankton antes de ser rivales, esta hamburguesa es perfecta para
+              comer con algun amigo, ya que se siente el sabor de la amistad en
+              ella.
+            </p>
+            <strong><p>Precio: $5950</p></strong>
+            <button class="producto-Agregar">Agregar</button>
+          </div>
+        </div>
+        <div class="card" style="width: 24rem">
+          <img src="{% static 'img/pizza.jpg'%}" alt="Krabby Patty" />
+          <div class="card-body">
+            <h3>Pizza Patty</h3>
+            <p>
+              De la mano de nuestro amigo Calamardo nos trae la exquisita Pizza
+              Patty, la combinacion que todo humano desea. Una PIZZA y una
+              HAMBURGUESA JUNTAS.
+            </p>
+            <strong><p>Precio: $6890</p></strong>
+            <button class="producto-Agregar">Agregar</button>
+          </div>
+        </div>
+        <div class="card" style="width: 24rem">
+          <img src="{% static 'img/noodle-patty.png'%}" alt="Krabby Patty" />
+          <div class="card-body">
+            <h3>Noodle Patty</h3>
+            <p>
+              Esta es una hamburguesa un tanto peculiar, juntamos el sabor de
+              los deliciosos fideos junto a nuestro delicioso pan de
+              hamburguesa.
+            </p>
+            <strong><p>Precio: $5950</p></strong>
+            <button class="producto-Agregar">Agregar</button>
+          </div>
+        </div>
+        <div class="card" style="width: 24rem">
+          <img src="{% static 'img/Burrito-Patty.webp'%}" alt="Krabby Patty" />
+          <div class="card-body">
+            <h3>Burrito Patty</h3>
+            <p>
+              Esta es una de las combinaciones culinarias mas raras del local,
+              juntamos el sabor de los burritos mexicanos y las hamburguesas en
+              un solo producto.
+            </p>
+            <strong><p>Precio: $10450</p></strong>
+            <button class="producto-Agregar">Agregar</button>
+          </div>
+        </div>
+        <div class="card" style="width: 24rem">
+          <img src="{% static 'img/Jim-Patty.webp'%}" alt="Krabby Patty" />
+          <div class="card-body">
+            <h3>Jim Patty</h3>
+            <p>
+              Esta es otra de las mejores hamburguesas que ofrecemos, esta fue
+              creada por Jim, uno de los mejores trabajadores de Don Cangrejo.
+            </p>
+            <strong><p>Precio: $7990</p></strong>
+            <button class="producto-Agregar">Agregar</button>
+          </div>
+        </div>
+        <div class="card" style="width: 24rem">
+          <img src="{% static 'img/Jelly-Patty.webp'%}" alt="Krabby Patty" />
+          <div class="card-body">
+            <h3>Jelly Patty</h3>
+            <p>
+              Una hamburguesa un tanto peculiar, con los ingredientes tipicos de
+              una Crangreburguer normal, pero con un toque dulce de mermelada.
+            </p>
+            <strong><p>Precio: $8480</p></strong>
+            <button class="producto-Agregar">Agregar</button>
+          </div>
+        </div>
+        <div class="card" style="width: 24rem">
+          <img src="{% static 'img/Kelp.webp'%}" alt="Krabby Patty" />
+          <div class="card-body">
+            <h3>Kelp Shake</h3>
+            <p>
+              No te puede faltar una de estas a la hora de comerte un
+              hamburguesa, una de los mejores bebibles de fondo de bikini.
+            </p>
+            <strong><p>Precio: $5440</p></strong>
+            <button class="producto-Agregar">Agregar</button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Aqui esta el carrusel de los personajes de la serie, hecho con js-->
+    <div class="owl-container mt-5">
+      <div class="owl-carousel owl-theme">
+        <div class="item">
+          <img src="{% static 'img/owl-img/SBP.png' %}" alt="spongebob" />
+        </div>
+        <div class="item">
+          <img src="{% static 'img/owl-img/PatrickS.png' %}" alt="patrick" />
+        </div>
+        <div class="item">
+          <img
+            src="{% static 'img/owl-img/squidward_c.webp' %}"
+            alt="squidward"
+          />
+        </div>
+        <div class="item">
+          <img src="{% static 'img/owl-img/garyc.webp' %}" alt="gary" />
+        </div>
+        <div class="item">
+          <img src="{% static 'img/owl-img/MrKrabs.webp' %}" alt="mrkrabs" />
+        </div>
+        <div class="item">
+          <img src="{% static 'img/owl-img/sandyc.webp' %}" alt="sandy" />
+        </div>
+        <div class="item">
+          <img src="{% static 'img/owl-img/planktonc.webp' %}" alt="plankton" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Este es el footer -->
+    {% include 'alumnos/footer.html' %}
+
+    <!-- Aquí estan los scripts-->
+    <script src="{% static 'JS//jquery.min.js'%}"></script>
+    <script src="{% static 'JS/owl.carousel.min.js'%}"></script>
+    <script src="{% static 'JS//main.js'%}"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>
